@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editer</title>
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel = "stylesheet" href = "css/main.css">
+</head>
+<body>
+<div id = "main_contect">
+    <header>
+        <h2>Image Editor</h2>
+    </header>
+
+<main>
+
+    <div id = "right_section">
+        <section id  = "image_area">
+            <img id = "image_id" src = "img/stock.jpg" alt = "image">
+        </section>
+        <section id = "bottom_buttons">
+            <input style="display:none;" type = "file" class = "file" id = "file" accept="image/png, image/jpg" style = "width:500px;">
+            <button type = "button" title = "Save your work" class = "save" id = "save"><i class="fa-solid fa-floppy-disk"></i></button>
+            <a href = "index.html"><button type = "button"  title = "Back" ><i class="fa-solid fa-house"></i></button></a>
+            <button type = "button"  title = "Upload your image"  class = "get_file" id = "get_file"><i class="fa-solid fa-upload"></i></button>
+        </section>
+        
+</div>
+
+    <div id = "edit_area">
+        <div id = "main_content">
+        <h3>Filters</h3>
+            <section id = "filter_section">
+
+                <div class = "filters">
+                    <input type = "button" id = "brightness" class = " button active" value = "Brightness">
+                    <input type = "button" id = "contrast"  class = "button" value = "Contrast">
+                    <input type = "button" id = "blur"  class = "button" value = "Blur">
+                    <input type = "button" id = "grayscale"  class = "button" value = "Grayscale">
+                    <input type = "button" id = "saturate"  class = "button" value = "Saturate">
+                    <input type = "button" id = "hue_rotate"  class = "button" value = "Hue Rotate">
+                    <input type = "button" id = "invert"  class = "button" value = "Invert">
+                    <input type = "button" id = "sepia"  class = "button" value = "Sepia">
+                </div>
+
+            <section id = "slider_section">
+                <div class = "silder_logos">
+                    <h4 id = "input">Brightness</h4>
+                </div>
+                <div id = "slider_thingy">
+                        <p><span id = "percentage">100</span>%</p>
+                        <input id = "slider" class = "slider" type = "range" min = "0" max = "200" value = "100">
+                </div>
+            </section>
+        </section>  
+
+            <section id = "rotate_section">
+                <h3>Rotate</h3>
+                <div id  = "rotate_buttons">
+                    <button class = "rotate" id  = "vertical"><i class="fa-solid fa-rotate-left"></i></button>
+                    <button class = "rotate" id = "horizontal"><i class="fa-sharp fa-solid fa-rotate-right"></i></button>
+                </div>
+            </section>
+
+
+            <section id = "resize-section">
+                <h3>Resizer</h3>
+                <div id = "resize_sliders">
+                    <div id = "width_slider">
+                        <h4>Width</h4>
+                            <div>
+                                <p><span id = "width_value">275</span>px</p>
+                                <input type = "range" min = "25" max = "300" id = "width" class = "resize_slider">
+                            </div>
+                    </div>
+                    <div id = "height_slider">
+                        <h4 for = "height">Height</h4>
+                        <div>
+                            <p><span id = "height_value">275</span>px</p>
+                            <input type = "range" min = "25" max = "300" id = "height" class = "resize_slider">
+                        </div>
+                    </div>
+                    </div>
+                </section>
+        </div>
+    </div>
+</main>
+
+</div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src = "js/script.js"></script>
+</body>
+</html>

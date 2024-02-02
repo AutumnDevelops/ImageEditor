@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+$background:#e0e0e0e0;
+$mainbackground: linear-gradient(166deg, rgba(183,148,186,1) 11%, rgba(120,95,116,1) 100%);;
+$main_purple:#f6e8f5a9;
+$basic_border:0.75px solid rgba(178, 178, 178, 0.736);
+$main_font: 'Poppins', sans-serif;
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgb(0, 0, 0); 
+    border-radius: 5px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $mainbackground; 
+    border-radius: 10px;
+  }
+
+@mixin flex(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin basic_div(){
+    background: rgba( 16, 16, 16, 0.7 );
+    backdrop-filter: blur( 13px );
+    -webkit-backdrop-filter: blur( 13px );
+    border-radius: 10px;
+    border: $basic_border;
+}
+@mixin basic_button(){
+    background: rgba( 16, 16, 16, 0.7 );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 5px;
+}
+
+@mixin image_default{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+
+body{
+    @include flex();
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+        background: $mainbackground;
+        font-family: $main_font;
+        font-weight: 100;
+
+    #main_contect{
+        width: 650px;
+        @include flex();
+        flex-direction: column;
+        @media(max-width:699px){
+            width: 280px;
+        }
+
+        header{
+            @include basic_div();
+            width: 100%;
+                border: $basic_border;
+                padding: 5px;
+                font-size: 10px;
+                @include flex();
+                margin-bottom: 15px;
+                color:$main_purple;
+                @media(max-width:699px){
+                    margin-bottom: 5px;
+                }
+                h2{
+                    padding: 2.5px;
+                    text-align: center;
+                }}
+
+    }
+    #index_header{
+        @include basic_div();
+        width: 50%;
+            border: $basic_border;
+            padding: 5px;
+            font-size: 10px;
+            @include flex();
+            margin-bottom: 15px;
+            color:$main_purple;
+            height: 200px;
+    }
+    main{
+        display: flex;
+            @media(max-width:699px){
+                margin: auto;
+                flex-direction: column;
+            }
+        #edit_area{
+            @include basic_div();
+            width: 300px;
+            height: 350px;
+            padding: 5px;
+            @media(max-width:699px){
+                width: 280px;
+                height: 280px;
+                padding: 5px;
+                margin-top:none;
+            }
+
+            #main_content{
+                height: 340px;
+                overflow-y: auto;
+                @media(max-width:699px){
+                    height: 250px;
+                    overflow-y: auto;
+                }
+                padding: 15px;
+                align-items: center;
+                h3{
+                    color: $main_purple;
+                    font-size: 15px;
+                }
+                h4{
+                    font-size: 10px;
+                }
+                p{
+                    font-size: 10px;
+                }
+
+                #resize-section{
+                    #resize_sliders{
+                        @include basic_button();
+                        width: 100%;
+                        height: 100px;
+                        margin: auto;
+                        #width_slider{
+                            color:$main_purple;
+                            accent-color: $main_purple;
+                            display: flex;
+                            flex-direction: column;
+                            height: 30px;
+                            h4{
+                                text-align: center;
+                            }
+                            div{
+                                display: flex;
+                                input{
+                                    accent-color: $main_purple;
+                                    width: 250px;
+                                    margin-left: 15px;
+                                    cursor: pointer;
+                                }}}
+                                #height_slider{
+                                    margin-top: 15px;
+                                    color:$main_purple;
+                                    accent-color: $main_purple;
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 30px;
+                                    h4{
+                                        text-align: center;
+                                    }
+                                    div{
+                                        display: flex;
+                                        input{
+                                            cursor: pointer;
+                                            accent-color: $main_purple;
+                                            width: 250px;
+                                            margin-left: 15px;
+                            }}}}}
+            
+                #filter_section{
+                    margin: 5px auto;
+                    .filters{
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .button{
+                            @include basic_button();
+                            padding: 5px;
+                            color:$main_purple;
+                            border: none;
+                            outline: none;
+                            margin: 5px;
+                            &:hover{
+                                background: rgba(3, 3, 3, 0.7);
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                            &.active{
+                                background: rgba(3, 3, 3, 0.7);
+                                text-decoration: underline;
+                            }
+                            
+                        }}
+                        #slider_section{
+                            margin-top: 15px;
+                            @include basic_button();
+                                color:$main_purple;
+                                text-align: center;
+                                #slider_thingy{
+                                    cursor: pointer;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    input{
+                                        accent-color: $main_purple;
+                                        width: 250px;
+                                        margin-left: 15px;
+                                        cursor: pointer;
+                                    }}}}
+
+            #rotate_section{
+                #rotate_buttons{
+                    @include flex();
+                    .rotate{
+                        @include basic_button();
+                        color:$main_purple;
+                        padding: 5px;
+                        margin-left: 5px;
+                        &:hover{
+                            background: rgba(3, 3, 3, 0.7);
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+    }}}}}
+        #right_section{
+            @include flex();
+            flex-direction: column;
+            margin-right: 50px;
+        #image_area{
+            @include basic_div();
+                width: 300px;
+                height: 300px;
+                @include flex();
+                @media(max-width:699px){
+                    width: 280px;
+                    height: 280px;
+                }
+                #image_id{
+                    width: 275px;
+                    height: 275px;
+                    border: 0.25px solid $main_purple;
+                    border-radius: 5px;
+                    @media(max-width:699px){
+                        width: 250px;
+                        height: 250px;
+}}}
+        #bottom_buttons{
+            margin-top: 15px;
+            @include basic_div();
+            width: 100%;
+            height: 10%;
+            @include flex();
+            justify-content: space-around;
+                @media(max-width:699px){
+                    margin: 5px;
+                }
+                button{
+                    @include basic_button();
+                    color:$main_purple;
+                    padding: 5px;
+                    &:hover{
+                        background: rgba(3, 3, 3, 0.7);
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                        @media(max-width:699px){
+                            margin: 2.5px;
+                            font-size: 10px;
+}}}}}}
+
+#index_area{
+    @include flex();
+    @include basic_div();
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1.75 solid gainsboro;
+    height: 300px;
+    width: 300px;
+    background: url(../img/index_image.png);
+    color: $main_purple;
+    font-weight: 600;
+    h2{
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+    a{
+        @include basic_button();
+        color:$main_purple;
+        text-decoration: none;
+        padding: 7.5px;
+        &:hover{
+            background: rgba(3, 3, 3, 0.7);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        &.active{
+            background: rgba(3, 3, 3, 0.7);
+            text-decoration: underline;
+        }
+    }
+}
